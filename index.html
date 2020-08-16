@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front Awsome Animation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container {
+            background-color: rgb(11, 6, 43);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main_div {
+            background-color: darkturquoise;
+            width: 95vw;
+            height: 100vh;
+        }
+
+        .fa {
+            display: flex;
+            margin-top: 50px;
+            justify-content: center;
+            font-size: 150px;
+        }
+
+        .fa-refresh {
+            color: rgb(236, 134, 31);
+            -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+              transition: 3s;
+              animation:  animate 3s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                   -ms-transform: rotate(0deg);
+                  transform: rotate(0deg);
+            }
+            20% {
+                   -ms-transform: rotate(72deg);
+                  transform: rotate(72deg);
+            }
+            40% {
+                   -ms-transform: rotate(144deg);
+                  transform: rotate(144deg);
+            }
+         
+            60% {
+                   -ms-transform: rotate(216deg);
+                  transform: rotate(216deg);
+            }
+            80%{
+                 
+                   -ms-transform: rotate(288deg);
+                  transform: rotate(288deg);
+            
+            }
+            100%{
+                 -ms-transform: rotate(360deg);
+                  transform: rotate(360deg);
+            }
+        }
+    </style>name
+</head>
+
+<body>
+    <div class="container">
+        <div class="main_div">
+            <i id="chain" class="fa"></i>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            <i id="battery" class="fa"></i>
+
+        </div>
+    </div>
+
+    <script>
+
+        //chain animation 
+
+        function chain() {
+            let chain = document.getElementById("chain")
+            chain.innerHTML = "&#xf0c1"
+
+            setTimeout(() => {
+                chain.innerHTML = "&#xf127"
+            }, 1000)
+        }
+
+        // chain function call
+        chain()
+        // setInterval for unlimited call 
+
+        setInterval(chain, 2000)
+
+  //==============
+
+function battery(){
+    let battery = document.getElementById("battery")
+    battery.innerHTML = "&#xf244"
+
+    setTimeout(()=>{
+      battery.innerHTML = "&#xf243"
+    },1000)
+
+    setTimeout(() => {
+        battery.innerHTML = "&#xf242"
+    }, 2000)
+
+    setTimeout(() => {
+        battery.innerHTML = "&#xf241"
+    }, 3000)
+
+    setTimeout(() => {
+        battery.innerHTML = "&#xf240"
+    }, 4000)
+}
+// call battery function
+battery()
+
+//infinity call battery function
+
+setInterval(battery,5000)
+
+
+    </script>
+</body>
+
+</html>
